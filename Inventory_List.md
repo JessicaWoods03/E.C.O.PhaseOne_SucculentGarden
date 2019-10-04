@@ -21,3 +21,11 @@ TO MONITOR ROOT PROGRESSION, AT A DEPTH OF 5 1/2 INCHES)*<br>
 <br>*ROLLING CABINET ORGANIZER  ($10.00) THIS IS USED A BASIC WATERING DISH UNDER THE GARDEN TO HOLD THE WATER FROM
 BECOMING A MESS-*<br>
 <br>*SOIL BASE TYPES ARE CACTUS SOIL, PLAYBOX SAND, ROCKS ON THE BOTTOM, WITH 6 DRAIN HOLES*<br>
+<br>830 TIE POINTS SOLDERLESS BREADBOARD<br>
+<br>**you need a solder kit, I already have access to one**<br>
+## Parts for Database <h2>
+<br>2.5" EXTERNAL SATA HARD DRIVE ENCLOSURE (You will want this for your raspberry pi, although you have internal
+  memory options an external memory will keep your raspberry pi happy as the data is heavily loaded else where)
+<br> Solid State Drive (I personally chose 240GB, you can choose whatever you think you will need)
+  * Read speed is 530MB/s
+  * Write speed is 440MB/s<br>
