@@ -1,0 +1,61 @@
+Creating a Database on SQLite (with the help listed in my Wiki Page)
+pi@raspberrypi:/media/dataStorage $ sqlite3
+SQLite version 3.27.2 2019-02-25 16:06:06
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+sqlite> CREATE TABLE AirReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, gas NUMERIC, pressure NUMERIC, date DATE, time TIME, device TEXT);
+sqlite> COMMIT;
+Error: cannot commit - no transaction is active
+sqlite> BEGIN;    //Always start with BEGIN;
+sqlite> CREATE TABLE AirReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, gas NUMERIC, pressure NUMERIC, date DATE, time TIME, device TEXT);
+Error: table AirReadings already exists
+sqlite> COMMIT;
+sqlite> .table
+AirReadings
+sqlite> .fullschema
+CREATE TABLE AirReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, gas NUMERIC, pressure NUMERIC, date DATE, time TIME, device TEXT);
+/* No STAT tables available */
+sqlite> BEGIN;
+sqlite> INSERT INTO AirReadings(temperature, humidity, gas, pressure, date, time, device) values(22.4, 12.1, 10, 5, date('now'), time('now'), "manual");  //Testing to see if the table works
+sqlite> COMMIT;
+sqlite> SELECT * FROM AirReadings;   //Checking to see if the information went into the table
+1|22.4|12.1|10|5|2019-10-06|01:08:06|manual
+sqlite> BEGIN;
+sqlite> INSERT INTO AirReadings(temperature, humidity, gas, pressure, date, time, device) values(22.4, 12.5, 20, 4, date('now'), time('now'), "manual"); //Testing it again
+sqlite> COMMIT;
+sqlite> SELECT * FROM AirReadings; //Checking again to see if the information is all there
+1|22.4|12.1|10|5|2019-10-06|01:08:06|manual
+2|22.4|12.5|20|4|2019-10-06|01:11:14|manual
+sqlite> .fullschema
+CREATE TABLE AirReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, gas NUMERIC, pressure NUMERIC, date DATE, time TIME, device TEXT);
+/* No STAT tables available */
+sqlite> .tables
+AirReadings
+sqlite> BEGIN;
+sqlite> CREATE TABLE UVReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, uv NUMERIC, date DATE, time TIME, device TEXT);
+sqlite> COMMIT;
+sqlite> .tables
+AirReadings  UVReadings 
+sqlite> CREATE TABLE SoilReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, moisture NUMERIC, temperature NUMERIC, internalTemp NUMERIC, date DATE, time TIME, device TEXT);
+sqlite> COMMIT;
+Error: cannot commit - no transaction is active
+sqlite> BEGIN;
+sqlite> CREATE TABLE SoilReadings(id INTEGER PRIMARY KEY AUTOINCREMENT, moisture NUMERIC, temperature NUMERIC, internalTemp NUMERIC, date DATE, time TIME, device TEXT);
+Error: table SoilReadings already exists
+sqlite> COMMIT;
+sqlite> .tables
+AirReadings   SoilReadings  UVReadings  
+sqlite> CREATE TABLE CameraPictures(id INTEGER PRIMARY KEY AUTOINCREMENT, filename TEXT, date DATE, time TIME, device TEXT);
+sqlite> COMMIT;
+Error: cannot commit - no transaction is active
+sqlite> BEGIN;
+sqlite> CREATE TABLE CameraPictures(id INTEGER PRIMARY KEY AUTOINCREMENT, filename TEXT, date DATE, time TIME, device TEXT);
+Error: table CameraPictures already exists
+sqlite> COMMIT;
+sqlite> BEGIN;
+sqlite> CREATE TABLE NDVIpictures(id INTEGER PRIMARY KEY AUTOINCREMENT, filename TEXT, date DATE, time TIME, device TEXT);
+sqlite> COMMIT;
+sqlite> .tables
+AirReadings     CameraPictures  NDVIpictures    SoilReadings    UVReadings    
+sqlite> 
+// 5 tables are created based on the type of information I get from them incase I want to upgrade my system in my database, like currently I have a UV reading sensor, if I upgrade to a UVA and UVB I can still use the same table from my database.
