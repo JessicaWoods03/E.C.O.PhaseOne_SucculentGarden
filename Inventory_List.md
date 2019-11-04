@@ -2,6 +2,7 @@
 ## Parts that have websites for ordering options :relaxed: <h2>
 
 <br>*Rasberry Pi/ Pi NoIR Camera V2* (https://www.adafruit.com/product/3100)<br>
+*******Camera Needs IR Filter for processing**********
 
 <br>*VEML6070 UV SENSOR* (https://www.adafruit.com/product/2899)<br>
 
