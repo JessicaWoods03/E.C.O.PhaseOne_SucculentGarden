@@ -1,0 +1,6 @@
+pi@raspberrypi:~ $ crontab -l
+
+# 
+# m h  dom mon dow   command
+#uses one hour cron command loop for photos snapshots that are time stamped.
+59 * * * * /usr/bin/python3.5 /home/pi/video.py
