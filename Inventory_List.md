@@ -12,8 +12,8 @@
 <br>*RASBERRY PI 4 COMPUTER MODELB 4GB RAM*  (https://www.adafruit.com/product/4296)<br>
 <br>*PI 4 CASE* (https://www.adafruit.com/product/4301)
 <br>*2 QTY.   ADAFRUIT STEMMA SOIL I2C CAPACITAVE MOISTURE SENSORS* (https://www.adafruit.com/product/4026)<br>
-
-*2 QTY.   JST 4PH TO FEMALE* (https://www.adafruit.com/product/3568)
+<br>MULTIPLEXER. TCA9548A I2C (https://www.adafruit.com/product/2717) **FOR SOIL SENSOR ADDRESSES**
+<br>*2 QTY.   JST 4PH TO FEMALE* (https://www.adafruit.com/product/3568)<br>
 ## Parts you will have to find on your own... sorry :hankey: <h2>
 <br>*2 QTY.   4-JSTPH 6*<br>
 <br>*SCRAP WOOD FOR CAMERA STAND* (**FREE**)<br>
