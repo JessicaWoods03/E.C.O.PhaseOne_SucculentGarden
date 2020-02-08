@@ -25,7 +25,7 @@ def soil_reading():
 
     #check sensor for daily errors
     if (difference > 3 or difference < -3):
-        print('moisture warning' + difference)
+        print("moisture warning", difference)
 
     
 
@@ -37,9 +37,9 @@ def soil_reading():
 
     #check sensor for daily errors
     if (temp_difference > 3 or temp_difference < -3):
-        print('tempurature warning' + temp_difference)
+        print("tempurature warning", temp_difference)
     
-    print("temp: " + str(temp) + " moisture: " + str(touch))
+    print("temp: ",temp, " moisture: ",touch)
     time.sleep(1)
 
 
